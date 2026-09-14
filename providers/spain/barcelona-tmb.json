@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 2,
+  "id": "es-barcelona-tmb",
+  "countryCode": "ES",
+  "name": "Transports Metropolitans de Barcelona (TMB)",
+  "status": "active",
+  "coverage": {
+    "type": "regional",
+    "regions": [
+      "Barcelona metropolitan area"
+    ],
+    "modes": [
+      "bus",
+      "metro",
+      "funicular"
+    ]
+  },
+  "reliability": {
+    "level": "verified",
+    "confidence": "high",
+    "verifiedAt": "2026-09-14"
+  },
+  "staticGtfs": {
+    "url": "https://api.tmb.cat/v1/static/datasets/gtfs.zip",
+    "authentication": "api-key",
+    "downloadPolicy": "processor-only"
+  },
+  "appPolicy": {
+    "allowDirectRealtimeFetch": false,
+    "allowDirectStaticGtfsFetch": false,
+    "preferCachedTravelPack": true,
+    "fallbackWhenUnavailable": "scheduled_or_manual"
+  },
+  "healthCheck": {
+    "enabled": false,
+    "reason": "Disabled to avoid false failures, credentials, or large downloads."
+  },
+  "sourcePage": "https://www.tmb.cat/en/tmb-app-and-other-apps/tools-for-developers",
+  "license": {
+    "url": "https://developer.tmb.cat/data/gtfs"
+  },
+  "realtime": {
+    "availability": "credential-required"
+  },
+  "notes": [
+    "Official TMB GTFS requires developer credentials for direct access.",
+    "Travel2U should use a server-side/build-time credential, never embed a TMB secret in a public Android APK.",
+    "Realtime is available through TMB developer services but is not enabled in the bootstrap until credentials and exact endpoints are configured."
+  ]
+}

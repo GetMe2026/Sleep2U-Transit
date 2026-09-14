@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 2,
+  "id": "gr-athens-stasy-rail",
+  "countryCode": "GR",
+  "name": "STASY Athens urban rail",
+  "status": "testing",
+  "coverage": {
+    "type": "regional",
+    "regions": [
+      "Athens",
+      "Attica",
+      "Piraeus",
+      "Athens Airport corridor"
+    ],
+    "modes": [
+      "metro",
+      "tram"
+    ]
+  },
+  "reliability": {
+    "level": "testing",
+    "confidence": "medium",
+    "verifiedAt": "2026-09-14"
+  },
+  "staticGtfs": {
+    "url": "https://data.gov.gr/dataset/4e897a75-975a-4ce7-af65-f32ea01f93b9/resource/5e3858ee-d9ba-48c2-9015-744ea160976d/download/stasy_gtfs.zip",
+    "authentication": "none",
+    "downloadPolicy": "processor-only"
+  },
+  "appPolicy": {
+    "allowDirectRealtimeFetch": false,
+    "allowDirectStaticGtfsFetch": false,
+    "preferCachedTravelPack": true,
+    "fallbackWhenUnavailable": "scheduled_or_manual"
+  },
+  "healthCheck": {
+    "enabled": false,
+    "reason": "Disabled to avoid false failures, credentials, or large downloads."
+  },
+  "sourcePage": "https://www.transit.land/feeds/f-stasy~urbanrailtransport~gr",
+  "realtime": {
+    "availability": "not-configured"
+  },
+  "notes": [
+    "Official STASY GTFS source for Athens metro/tram.",
+    "The feed source is valid, but the service-date window exposed by current catalog metadata requires runtime validation before Travel2U may call it current.",
+    "Until validated, show Beta/Scheduled and fall back to official STASY timetable information or another configured provider rather than silently trusting stale dates."
+  ]
+}

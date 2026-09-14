@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 2,
+  "id": "nl-ovapi-national",
+  "countryCode": "NL",
+  "name": "OVapi Netherlands national aggregate",
+  "status": "active",
+  "coverage": {
+    "type": "national",
+    "regions": [
+      "Netherlands"
+    ],
+    "modes": [
+      "train",
+      "bus",
+      "tram",
+      "metro",
+      "ferry"
+    ]
+  },
+  "reliability": {
+    "level": "verified-with-warnings",
+    "confidence": "high",
+    "verifiedAt": "2026-09-14"
+  },
+  "staticGtfs": {
+    "url": "https://gtfs.ovapi.nl/nl/gtfs-nl.zip",
+    "authentication": "none",
+    "downloadPolicy": "processor-only"
+  },
+  "appPolicy": {
+    "allowDirectRealtimeFetch": true,
+    "allowDirectStaticGtfsFetch": false,
+    "preferCachedTravelPack": true,
+    "fallbackWhenUnavailable": "scheduled_or_manual"
+  },
+  "healthCheck": {
+    "enabled": true,
+    "reason": "Direct endpoint can be checked without credentials."
+  },
+  "sourcePage": "https://gtfs.ovapi.nl/nl/",
+  "realtime": {
+    "availability": "live",
+    "tripUpdates": "https://gtfs.ovapi.nl/nl/tripUpdates.pb",
+    "trainUpdates": "https://gtfs.ovapi.nl/nl/trainUpdates.pb",
+    "vehiclePositions": "https://gtfs.ovapi.nl/nl/vehiclePositions.pb",
+    "alerts": "https://gtfs.ovapi.nl/nl/alerts.pb",
+    "maxAgeMinutes": 5
+  },
+  "notes": [
+    "National feed is large and must be processed into Travel Packs before use on-device.",
+    "Realtime can be fetched directly by the app when near a planned journey."
+  ]
+}

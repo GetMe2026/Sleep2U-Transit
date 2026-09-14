@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 2,
+  "id": "es-cat-interurban-bus",
+  "countryCode": "ES",
+  "name": "Generalitat de Catalunya interurban bus",
+  "status": "active",
+  "coverage": {
+    "type": "regional",
+    "regions": [
+      "Catalonia",
+      "Girona",
+      "Barcelona",
+      "Tarragona",
+      "Lleida"
+    ],
+    "modes": [
+      "bus"
+    ]
+  },
+  "reliability": {
+    "level": "verified-with-warnings",
+    "confidence": "high",
+    "verifiedAt": "2026-09-14"
+  },
+  "staticGtfs": {
+    "url": "https://nap.transportes.gob.es/api/Fichero/download/1364",
+    "authentication": "nap-access-may-be-required",
+    "downloadPolicy": "processor-only"
+  },
+  "appPolicy": {
+    "allowDirectRealtimeFetch": false,
+    "allowDirectStaticGtfsFetch": false,
+    "preferCachedTravelPack": true,
+    "fallbackWhenUnavailable": "scheduled_or_manual"
+  },
+  "healthCheck": {
+    "enabled": false,
+    "reason": "Disabled to avoid false failures, credentials, or large downloads."
+  },
+  "sourcePage": "https://nap.transportes.gob.es/Files/Detail/1163",
+  "license": {
+    "url": "https://nap.transportes.gob.es/licencia-datos"
+  },
+  "realtime": {
+    "availability": "not-configured"
+  },
+  "notes": [
+    "Official interurban Catalonia schedule dataset; includes operators such as Sagalés, TEISA and others relevant around Girona/Costa Brava.",
+    "NAP metadata currently reports validation errors/warnings, so Travel2U must validate imported rows and never treat schedule data as realtime.",
+    "Useful as the main scheduled-data source for Girona Airport/Costa Brava journeys."
+  ],
+  "attribution": {
+    "required": true,
+    "text": "Powered by MITRAMS",
+    "url": "https://www.transportes.gob.es/"
+  }
+}

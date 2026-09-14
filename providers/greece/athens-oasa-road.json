@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 2,
+  "id": "gr-athens-oasa-road",
+  "countryCode": "GR",
+  "name": "OASA Athens road transport",
+  "status": "active",
+  "coverage": {
+    "type": "regional",
+    "regions": [
+      "Athens",
+      "Attica",
+      "Piraeus"
+    ],
+    "modes": [
+      "bus",
+      "trolleybus"
+    ]
+  },
+  "reliability": {
+    "level": "verified",
+    "confidence": "high",
+    "verifiedAt": "2026-09-14"
+  },
+  "staticGtfs": {
+    "url": "https://data.gov.gr/dataset/fb049bb1-aea6-4443-95fa-8b941dd6a057/resource/119db488-16ea-4c76-b560-41c472872390/download/osy_gtfs.zip",
+    "authentication": "none",
+    "downloadPolicy": "processor-only"
+  },
+  "appPolicy": {
+    "allowDirectRealtimeFetch": false,
+    "allowDirectStaticGtfsFetch": false,
+    "preferCachedTravelPack": true,
+    "fallbackWhenUnavailable": "scheduled_or_manual"
+  },
+  "healthCheck": {
+    "enabled": false,
+    "reason": "Disabled to avoid false failures, credentials, or large downloads."
+  },
+  "sourcePage": "https://mobilitydatabase.org/feeds/gtfs/mdb-3220",
+  "realtime": {
+    "availability": "not-configured"
+  },
+  "notes": [
+    "Official OASA road transport GTFS; current catalog validation shows an active 2026 service window for bus/trolleybus.",
+    "Realtime is not configured in bootstrap v2, so Travel2U must show timetable status rather than Live."
+  ]
+}

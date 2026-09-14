@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/GetMe2026/Sleep2U-Transit/main/schemas/provider.schema.json",
+  "title": "Sleep2U Transit Provider v2",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "countryCode",
+    "name",
+    "status",
+    "coverage",
+    "reliability",
+    "staticGtfs",
+    "appPolicy"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 2
+    },
+    "id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "countryCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "active",
+        "testing",
+        "disabled"
+      ]
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "type",
+        "regions",
+        "modes"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "national",
+            "regional",
+            "local"
+          ]
+        },
+        "regions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "modes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "train",
+              "bus",
+              "trolleybus",
+              "tram",
+              "metro",
+              "ferry",
+              "funicular",
+              "cable_car"
+            ]
+          }
+        }
+      }
+    },
+    "reliability": {
+      "type": "object",
+      "required": [
+        "level",
+        "confidence",
+        "verifiedAt"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "verified",
+            "verified-with-warnings",
+            "testing"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "verifiedAt": {
+          "type": "string"
+        }
+      }
+    },
+    "staticGtfs": {
+      "type": "object",
+      "required": [
+        "url",
+        "authentication",
+        "downloadPolicy"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "authentication": {
+          "type": "string"
+        },
+        "downloadPolicy": {
+          "enum": [
+            "processor-only",
+            "app-allowed"
+          ]
+        }
+      }
+    },
+    "realtime": {
+      "type": "object"
+    },
+    "appPolicy": {
+      "type": "object",
+      "required": [
+        "allowDirectRealtimeFetch",
+        "allowDirectStaticGtfsFetch",
+        "preferCachedTravelPack",
+        "fallbackWhenUnavailable"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

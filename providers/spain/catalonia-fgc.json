@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 2,
+  "id": "es-cat-fgc",
+  "countryCode": "ES",
+  "name": "Ferrocarrils de la Generalitat de Catalunya (FGC)",
+  "status": "active",
+  "coverage": {
+    "type": "regional",
+    "regions": [
+      "Catalonia",
+      "Barcelona",
+      "Lleida"
+    ],
+    "modes": [
+      "train",
+      "metro",
+      "funicular"
+    ]
+  },
+  "reliability": {
+    "level": "verified",
+    "confidence": "high",
+    "verifiedAt": "2026-09-14"
+  },
+  "staticGtfs": {
+    "url": "https://www.fgc.cat/google/google_transit.zip",
+    "authentication": "none",
+    "downloadPolicy": "processor-only"
+  },
+  "appPolicy": {
+    "allowDirectRealtimeFetch": false,
+    "allowDirectStaticGtfsFetch": false,
+    "preferCachedTravelPack": true,
+    "fallbackWhenUnavailable": "scheduled_or_manual"
+  },
+  "healthCheck": {
+    "enabled": true,
+    "reason": "Direct endpoint can be checked without credentials."
+  },
+  "sourcePage": "https://www.transit.land/feeds/f-fgc~cat",
+  "license": {
+    "url": "https://dadesobertes.fgc.cat/explore/dataset/gtfs_zip/information/"
+  },
+  "realtime": {
+    "availability": "not-configured"
+  },
+  "notes": [
+    "Official FGC GTFS. Static feed is suitable for Travel Pack processing.",
+    "Realtime endpoints are intentionally not enabled here until their exact current public URLs/licence are independently verified."
+  ]
+}

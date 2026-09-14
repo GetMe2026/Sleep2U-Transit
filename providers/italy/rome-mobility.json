@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 2,
+  "id": "it-rome-mobility",
+  "countryCode": "IT",
+  "name": "Roma Servizi per la Mobilità",
+  "status": "active",
+  "coverage": {
+    "type": "regional",
+    "regions": [
+      "Rome",
+      "Lazio - Rome urban area"
+    ],
+    "modes": [
+      "bus",
+      "tram",
+      "metro",
+      "rail"
+    ]
+  },
+  "reliability": {
+    "level": "verified",
+    "confidence": "high",
+    "verifiedAt": "2026-09-14"
+  },
+  "staticGtfs": {
+    "url": "https://romamobilita.it/sites/default/files/rome_static_gtfs.zip",
+    "authentication": "none",
+    "downloadPolicy": "processor-only"
+  },
+  "appPolicy": {
+    "allowDirectRealtimeFetch": true,
+    "allowDirectStaticGtfsFetch": false,
+    "preferCachedTravelPack": true,
+    "fallbackWhenUnavailable": "scheduled_or_manual"
+  },
+  "healthCheck": {
+    "enabled": true,
+    "reason": "Direct endpoint can be checked without credentials."
+  },
+  "sourcePage": "https://romamobilita.it/sistemi-e-tecnologie/open-data/",
+  "realtime": {
+    "availability": "live",
+    "tripUpdates": "https://romamobilita.it/sites/default/files/rome_rtgtfs_trip_updates_feed.pb",
+    "vehiclePositions": "https://romamobilita.it/sites/default/files/rome_rtgtfs_vehicle_positions_feed.pb",
+    "alerts": "https://romamobilita.it/sites/default/files/rome_rtgtfs_service_alerts_feed.pb",
+    "publishedUpdateSecondsApprox": 60,
+    "maxAgeMinutes": 5
+  },
+  "notes": [
+    "Official Rome scheduled GTFS is updated almost daily.",
+    "Official GTFS-Realtime feeds are published by Roma Servizi per la Mobilità; realtime coverage is primarily ATAC and Roma TPL fleets."
+  ]
+}

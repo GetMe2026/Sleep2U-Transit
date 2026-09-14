@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 2,
+  "countries": [
+    {
+      "countryCode": "NL",
+      "name": "Netherlands",
+      "status": "active",
+      "coverageSummary": "national",
+      "providers": [
+        "providers/netherlands/ovapi-national.json"
+      ]
+    },
+    {
+      "countryCode": "ES",
+      "name": "Spain",
+      "status": "active",
+      "coverageSummary": "regional",
+      "providers": [
+        "providers/spain/catalonia-interurban-bus.json",
+        "providers/spain/catalonia-fgc.json",
+        "providers/spain/barcelona-tmb.json"
+      ]
+    },
+    {
+      "countryCode": "IT",
+      "name": "Italy",
+      "status": "active",
+      "coverageSummary": "regional",
+      "providers": [
+        "providers/italy/rome-mobility.json",
+        "providers/italy/milan-gtfs.json"
+      ]
+    },
+    {
+      "countryCode": "GR",
+      "name": "Greece",
+      "status": "active",
+      "coverageSummary": "regional",
+      "providers": [
+        "providers/greece/athens-oasa-road.json",
+        "providers/greece/athens-stasy-rail.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "service": "Sleep2U-Transit",
+  "environment": "production",
+  "generatedFor": "Sleep2U Travel2U",
+  "catalogUrl": "https://raw.githubusercontent.com/GetMe2026/Sleep2U-Transit/main/providers/index.json",
+  "providerSchemaUrl": "https://raw.githubusercontent.com/GetMe2026/Sleep2U-Transit/main/schemas/provider.schema.json",
+  "cache": {
+    "manifestMaxAgeHours": 24,
+    "providerCatalogMaxAgeHours": 24,
+    "scheduledPackMaxAgeHours": 24,
+    "realtimeMaxAgeMinutes": 5
+  },
+  "travel2u": {
+    "regionalPacks": true,
+    "preferWifiForLargeDownloads": true,
+    "allowRoamingRealtimeDefault": false,
+    "deleteExpiredTravelPacks": true,
+    "liveDataIsOptional": true,
+    "neverBlockAlarmEngine": true
+  },
+  "uiReliabilityLabels": {
+    "live": "Live",
+    "scheduled": "Dienstregeling",
+    "estimated": "Geschat",
+    "testing": "Beta"
+  }
+}
